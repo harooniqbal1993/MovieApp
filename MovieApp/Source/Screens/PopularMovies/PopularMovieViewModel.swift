@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class PopularMovieViewModel {
     let movieService: MovieService = MovieService()
@@ -42,6 +43,10 @@ class PopularMovieViewModel {
     }
     
     private func saveMovies() {
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Movie")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        try? PersistantStorage.shared.context.execute(deleteRequest)
         
         for movie in movies {
             let movieEntity = Movie(context: PersistantStorage.shared.context)
