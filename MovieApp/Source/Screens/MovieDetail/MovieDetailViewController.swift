@@ -35,7 +35,7 @@ class MovieDetailViewController: UIViewController {
             movieThumbnail.sd_setImage(with: URL(string: movieDetailViewModel?.posterURL ?? ""), placeholderImage: UIImage(named: "movie-placeholder"))
         }
         
-        movieTitle.text = movieDetailViewModel?.title
+        movieTitle.text = "\(movieDetailViewModel?.title ?? "N?A")(\(movieDetailViewModel?.year ?? "N/A"))"
         descriptionLabel.text = movieDetailViewModel?.description
     }
     

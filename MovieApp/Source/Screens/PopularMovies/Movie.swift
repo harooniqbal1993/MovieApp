@@ -14,8 +14,6 @@ struct PopularMoviesResponse: Decodable {
 
 struct MovieModel: Decodable {
     var adult: Bool?
-    var backdrop_path: String?
-    var genre_ids: [Int]?
     var id: Double?
     var original_language: String?
     var original_title: String?
@@ -28,6 +26,59 @@ struct MovieModel: Decodable {
     var vote_average: Float?
     var vote_count: Int?
     var image: Data?
+    
+//    enum CodingKeys: String, CodingKey {
+//        case adult
+//        case id
+//        case original_language
+//        case original_title
+//        case overview
+//        case popularity
+//        case poster_path
+//        case release_date
+//        case title
+//        case video
+//        case vote_average
+//        case vote_count
+//        case image
+//    }
+    
+//    private static let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd" // Adjust the date format based on your JSON date format
+//        return formatter
+//    }()
+//    
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        
+//        do {
+//            adult = try container.decodeIfPresent(Bool.self, forKey: .adult)
+//            id = try container.decodeIfPresent(Double.self, forKey: .id)
+//            original_language = try container.decodeIfPresent(String.self, forKey: .original_language)
+//            original_title = try container.decodeIfPresent(String.self, forKey: .original_title)
+//            overview = try container.decodeIfPresent(String.self, forKey: .overview)
+//            popularity = try container.decodeIfPresent(Float.self, forKey: .popularity)
+//            poster_path = try container.decodeIfPresent(String.self, forKey: .poster_path)
+//            
+//            title = try container.decodeIfPresent(String.self, forKey: .title)
+//            video = try container.decodeIfPresent(Bool.self, forKey: .video)
+//            vote_average = try container.decodeIfPresent(Float.self, forKey: .vote_average)
+//            vote_count = try container.decodeIfPresent(Int.self, forKey: .vote_count)
+//            image = try container.decodeIfPresent(Data.self, forKey: .image)
+//            
+//            // Decode the createdWhen property using the date formatter
+//            if let releaseDateString = try container.decodeIfPresent(String.self, forKey: .release_date) {
+//                release_date = MovieModel.dateFormatter.date(from: releaseDateString)
+//            } else {
+//                release_date = nil
+//            }
+//        } catch {
+//            print("Notification parsing")
+//            print(error)
+//        }
+//        
+//    }
 }
 
 // Detail

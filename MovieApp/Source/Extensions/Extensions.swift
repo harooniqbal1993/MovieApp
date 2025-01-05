@@ -52,3 +52,30 @@ extension UICollectionView {
         self.backgroundView = nil
     }
 }
+
+extension String {
+
+    func toDate(withFormat format: String = "yyyy-MM-dd")-> Date?{
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let date = dateFormatter.date(from: self)
+
+        return date
+
+    }
+}
+
+
+extension Date {
+
+    func toString(withFormat format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        let myString = formatter.string(from: self)
+        let yourDate = formatter.date(from: myString)
+        formatter.dateFormat = format
+
+        return formatter.string(from: yourDate!)
+    }
+}

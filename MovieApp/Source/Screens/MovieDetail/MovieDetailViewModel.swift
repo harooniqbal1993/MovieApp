@@ -20,15 +20,28 @@ class MovieDetailViewModel {
     }
     
     var title: String {
-        return movie?.title ?? ""
+        return movie?.title ?? "N/A"
     }
     
     var description: String {
-        return movie?.overview ?? ""
+        return movie?.overview ?? "N/A"
     }
     
     var photo: Data? {
         return movie?.image
+    }
+    
+    var year: String? {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let release_date = movie?.release_date {
+            let showDate = inputFormatter.date(from: release_date)
+            inputFormatter.dateFormat = "yyyy"
+            let resultString = inputFormatter.string(from: showDate!)
+            return resultString
+        }
+        return nil
     }
     
     init(movieID: String?) {
@@ -64,7 +77,7 @@ class MovieDetailViewModel {
         request.predicate = NSPredicate(format: "id==%@", id as CVarArg)
         do {
             let result = try PersistantStorage.shared.context.fetch(request).first
-            return MovieModel(adult: false, backdrop_path: nil, genre_ids: nil, id: result?.id, original_language: nil, original_title: result?.title, overview: result?.overview, popularity: nil, poster_path: nil, release_date: nil, title: result?.title, video: false, vote_average: nil, vote_count: nil, image: result?.photo)
+            return MovieModel(adult: false, id: result?.id, original_language: nil, original_title: result?.title, overview: result?.overview, popularity: nil, poster_path: nil, release_date: nil, title: result?.title, video: false, vote_average: nil, vote_count: nil, image: result?.photo)
         } catch let error {
             print(error.localizedDescription)
         }

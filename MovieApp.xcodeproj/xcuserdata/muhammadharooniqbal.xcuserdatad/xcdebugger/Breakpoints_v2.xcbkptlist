@@ -14,8 +14,8 @@
             filePath = "MovieApp/Source/Screens/MovieDetail/MovieDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "fetchMovie(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,36 +130,6 @@
             endingLineNumber = "32"
             landmarkName = "updateUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "03147CED-A2B7-4CC4-BDA6-E1E8E1A3D97E - 9c831cfb0c8c699b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.MovieDetailViewController.updateUI() -&gt; ()"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/muhammadharooniqbal/Documents/iOS/MovieApp/MovieApp/Source/Screens/MovieDetail/MovieDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-               <Location
-                  uuid = "03147CED-A2B7-4CC4-BDA6-E1E8E1A3D97E - 9c831cfb0c8c699b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieApp.MovieDetailViewController.updateUI() -&gt; ()"
-                  moduleName = "MovieApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/muhammadharooniqbal/Documents/iOS/MovieApp/MovieApp/Source/Screens/MovieDetail/MovieDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -53,7 +53,7 @@ class PopularMovieViewModel {
             movieEntity.id = movie.id ?? 0
             movieEntity.title = movie.title
 //            movieEntity.posterPath = movie.posterPath
-            movieEntity.date = Date() // movie.release_date
+            movieEntity.date = movie.release_date?.toDate()
             movieEntity.overview = movie.overview
             
             // Download and save the image data
@@ -73,7 +73,7 @@ class PopularMovieViewModel {
             guard let result = try PersistantStorage.shared.context.fetch(Movie.fetchRequest()) as? [Movie] else { return [] }
             var savedMovies: [MovieModel] = []
             result.forEach { movie in
-                let movieModel = MovieModel(adult: false, backdrop_path: nil, genre_ids: nil, id: movie.id, original_language: nil, original_title: movie.title, overview: movie.overview, popularity: nil, poster_path: nil, release_date: nil, title: movie.title, video: nil, vote_average: nil, vote_count: nil, image: movie.photo)
+                let movieModel = MovieModel(adult: false, id: movie.id, original_language: nil, original_title: movie.title, overview: movie.overview, popularity: nil, poster_path: nil, release_date: movie.date?.toString(withFormat: "yyyy"), title: movie.title, video: nil, vote_average: nil, vote_count: nil, image: movie.photo)
                 savedMovies.append(movieModel)
             }
             self.isLoading = false
